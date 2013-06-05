@@ -26,12 +26,12 @@ The name of the attribute in the $scope to use as input. The attribute in questi
 
 ```js
 $scope.data = {
-  maximum: 100,
-  value: 75
+  label: 100,
+  percentage: 75
 };
 ```
 
-The value attribute should be a number and the color attribute should be a string. This string can represent a color in any CSS compatible ways (HEX notation, RGB, RGBA, HSL).
+The label attribute should be a string that will be displayed in the center of the circles. The percentage attribute must be a float, it will be used to show the completion of the task.
 
 A demonstration is visible in the file index.html.
 

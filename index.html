@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="angularjs-starter">
+  <head>
+      <title>Angular Round Progress Directive</title>
+
+      <link href="bootstrap-combined.min.css" rel="stylesheet" />
+
+      <style type="text/css">
+        html,body {
+          background-color: #3c3b49;
+          color: #fff;
+        }
+      </style>
+
+      <script src="angular.min.js"></script>
+      <script src="angular-round-progress-directive.js"></script>
+
+      <script>
+      var app = angular.module('angularjs-starter', ['angular.directives-round-progress']);
+
+      app.controller('MainCtrl', function($scope) {
+        $scope.roundProgressData = {
+          label: 11,
+          percentage: 0.83
+        }
+      });
+      </script>
+
+  </head>
+  <body ng-controller="MainCtrl">
+    <h1>AngularJS Round Progress Directive</h1>
+    <p>Have a look at the source code to see an example.</p>
+
+    <div ang:round:progress data-round-progress-model="roundProgressData"
+                            data-round-progress-width="500"
+                            data-round-progress-height="500"
+                            data-round-progress-outer-circle-width="40"
+                            data-round-progress-inner-circle-width="10"
+                            data-round-progress-outer-circle-radius="200"
+                            data-round-progress-inner-circle-radius="140"
+                            data-round-progress-label-font="100pt Arial"
+                            data-round-progress-outer-circle-background-color="#505769"
+                            data-round-progress-outer-circle-foreground-color="#12eeb9"
+                            data-round-progress-inner-circle-color="#505769"
+                            data-round-progress-label-color="#fff"></div>
+  </body>
+</html>

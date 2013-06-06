@@ -38,6 +38,7 @@ angular.module('angular.directives-round-progress', []).directive('angRoundProgr
           scope.$watch(expression, function (newValue, oldValue) {
             // Create the content of the canvas
             var ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, width, height);
 
             // The "background" circle
             var x = width / 2;

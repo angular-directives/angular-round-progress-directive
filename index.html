@@ -21,8 +21,13 @@
       app.controller('MainCtrl', function($scope) {
         $scope.roundProgressData = {
           label: 11,
-          percentage: 0.83
+          percentage: 0.11
         }
+
+        // Here I synchronize the value of label and percentage in order to have a nice demo
+        $scope.$watch('roundProgressData', function (newValue, oldValue) {
+          newValue.percentage = newValue.label / 100;
+        }, true);
       });
       </script>
 
@@ -31,6 +36,7 @@
     <h1>AngularJS Round Progress Directive</h1>
     <p>Have a look at the source code to see an example.</p>
 
+    <!-- You can see here that you can override the default settings of the directive (color, size, width, font, etc) -->
     <div ang:round:progress data-round-progress-model="roundProgressData"
                             data-round-progress-width="500"
                             data-round-progress-height="500"
@@ -43,5 +49,7 @@
                             data-round-progress-outer-circle-foreground-color="#12eeb9"
                             data-round-progress-inner-circle-color="#505769"
                             data-round-progress-label-color="#fff"></div>
+
+    <input type="number" ng-model="roundProgressData.label"/>
   </body>
 </html>

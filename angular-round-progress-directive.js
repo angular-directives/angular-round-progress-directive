@@ -79,9 +79,9 @@ angular.module('angular.directives-round-progress', []).directive('angRoundProgr
     }
   };
 
-  var chartjsDoughnut = {
+  var roundProgress = {
     compile: compilationFunction,
     replace: true
   };
-  return chartjsDoughnut;
+  return roundProgress;
 }]);
